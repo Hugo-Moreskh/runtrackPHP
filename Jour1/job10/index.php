@@ -1,11 +1,11 @@
 <?php
-$jour= TRUE;
-function bonjour(bool $jour) {
-  if ($jour) {
+$j= TRUE;
+function bonjour($i) {
+  if ($i) {
       echo "Bonjour";
   } else {
       echo "Bonsoir";
   }
 }
-bonjour($jour);
+bonjour($j);
 ?>
