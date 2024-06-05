@@ -13,13 +13,10 @@
       <th>Valeur</th>
     </tr>
     <?php
-    if (count($_POST) > 0) {
-        foreach ($_POST as $argument => $valeur) {
-            echo "<tr><td>" . $argument . "</td><td>" . $valeur . "</td></tr>";
+foreach ($_POST as $argument => $valeur) {
+              echo "<tr><td>" . $argument . "</td><td>" . $valeur . "</td></tr>";
         }
-    } else {
-        echo "<tr><td colspan='2'>Aucun argument POST trouvé.</td></tr>";
-    }
+    
     ?>
   </table>
 
