@@ -4,22 +4,13 @@
  Si un produit a un prix supérieur à 100 € alors une réduction de 10 % est appliquée.
 Chaque produit doit avoir un nom, un prix et une quantité.
 L’ensemble des produits doivent être affiché sur une page HTML. -->
-
-
 <?php
-
 session_start();
-
 if(!isset($_SESSION['listeProduit']) ){
   $_SESSION['listeProduit']= [];
 }
 array_push($_SESSION['listeProduit'], $_POST);
-
-
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
