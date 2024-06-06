@@ -12,7 +12,7 @@ number: <input type="number" name= "Number">
   </form>
   <?php
   function nombre(){
-if ($_GET){
+if (isset ($_GET)){
   $number=$_GET["Number"];
   if($number % 2 ===0){
     echo "Nombre pair";
