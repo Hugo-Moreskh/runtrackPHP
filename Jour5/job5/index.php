@@ -14,31 +14,33 @@ try {
 }
 
 // Préparation de la requête SQL pour récupérer les données
-$sql = "SELECT * FROM salle";
+$sql = "SELECT prenom, nom, naisance FROM etudiant WHERE sexe = 'femme'";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 // Récupération des résultats
-$salles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+$etudiants = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Affichage des résultats dans un tableau HTML
 echo "<table border='1'>";
 echo "<thead>";
 echo "<tr>";
+echo "<th>Prénom</th>";
 echo "<th>Nom</th>";
-echo "<th>Naisance</th>";
+echo "<th>Date de Naissance</th>";
 echo "</tr>";
 echo "</thead>";
 echo "<tbody>";
 
 // Affichage des données
-foreach ($salles as $salle) {
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($salle['nom']) . "</td>";
-    echo "<td>" . htmlspecialchars($salle['capacite']) . "</td>";
-    echo "</tr>";
+foreach ($etudiants as $etudiant) {
+  echo "<tr>";
+  echo "<td>" . htmlspecialchars($etudiant['prenom']) . "</td>";
+  echo "<td>" . htmlspecialchars($etudiant['nom']) . "</td>";
+  echo "<td>" . htmlspecialchars($etudiant['naisance']) . "</td>";
+  echo "</tr>";
 }
+
 
 echo "</tbody>";
 echo "</table>";
